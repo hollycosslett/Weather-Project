@@ -7,7 +7,7 @@ body {
   max-width: 700px;
   margin: 50px auto;
   padding: 30px;
-  box-shadow: 0 30px 50px rgba(65, 50, 100, 0.08);
+  box-shadow: 0 30px 50px rgba(48, 50, 49, 0.08);
   border-radius: 16px;
 }
 
@@ -20,14 +20,17 @@ body {
   width: 520px;
   border: none;
   border-radius: 10px;
+  box-shadow: 0 50px 50px rgba(48, 50, 49, 0.08);
   padding: 15px;
   font-size: 16px;
 }
 .search-form-button {
-  background-color: rgb(228, 232, 231);
+  background-color: rgb(107, 110, 109);
+  color: whitesmoke;
   width: 125px;
   border: none;
   border-radius: 10px;
+  box-shadow: 0 50px 50px rgba(48, 50, 49, 0.08);
   padding: 15px;
   font-size: 16px;
   margin: 6px;
@@ -45,12 +48,14 @@ main {
   display: flex;
   justify-content: space-between;
 }
+
 .city {
-  margin: 0;
+  margin: 20px 0 0 20px;
   font-size: 38px;
   line-height: 48px;
 }
 .weather-details {
+  margin: 15px 0 20px 20px;
   font-size: 16px;
   line-height: 22px;
   color: rgba(39, 33, 66, 0.4);
@@ -58,6 +63,24 @@ main {
 .weather-measurements {
   color: rgba(53, 59, 53, 0.564);
   font-weight: bolder;
+}
+.weather-temperature-container {
+  display: flex;
+  margin-right: 10px;
+}
+
+.weather-icon {
+  font-size: 45px;
+  margin: 50px 2px 0 0;
+}
+.weather-degrees {
+  font-size: 88px;
+  margin-top: 20px;
+  font-weight: bold;
+}
+.weather-unit {
+  font-size: 22px;
+  margin: 33px 10px 0 0;
 }
 footer {
   margin: 15px;
