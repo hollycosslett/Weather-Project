@@ -89,6 +89,23 @@ header {
   font-size: 22px;
   margin: 10px 10px 0 0;
 }
+.weather-forecast-container {
+  display: flex;
+}
+.weather-forecast {
+  margin: 20px 0 20px 20px;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(55, 55, 60);
+}
+.weather-temperatures {
+  font-size: 12px;
+}
+.weather-forecast-temperature-min {
+  opacity: 0.6;
+}
 footer {
   margin: 15px;
   border-top: 1px solid rgba(65, 74, 97, 0.106);
