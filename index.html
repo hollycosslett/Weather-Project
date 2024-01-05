@@ -30,7 +30,7 @@
       </header>
       <main>
         <div class="weather-information">
-          <div>
+          <div class="city-container">
             <h1 class="city" id="city"></h1>
             <p class="weather-details">
               <span id="time"></span>,
@@ -47,25 +47,7 @@
             <div class="weather-unit">°C</div>
           </div>
         </div>
-        <div class="weather-forecast-container">
-          <div class="weather-forecast">
-            <div class="row">
-              <div class="col-2">
-                <div class="weather-forecast-date">Thurs</div>
-                <div class="icon-1">
-                  <img
-                    src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-day.png"
-                    width="36"
-                  />
-                </div>
-                <div class="weather-temperatures">
-                  <span class="weather-forecast-temperature-max">18°</span>
-                  <span class="weather-forecast-temperature-min">12°</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="weather-forecast" id="forecast"></div>
       </main>
       <footer>
         This project was coded by
