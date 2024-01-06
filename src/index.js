@@ -1,3 +1,9 @@
+function convertMPStoMPH(mps) {
+  let mph = (mps /= 0.44704);
+  let roundedMph = Math.round(mps);
+  return roundedMph;
+}
+
 function refreshWeather(response) {
   let temperatureElement = document.querySelector("#weather-degrees");
   let temperature = response.data.temperature.current;
@@ -12,7 +18,7 @@ function refreshWeather(response) {
   let humidity = `${response.data.temperature.humidity}%`;
 
   let windSpeedElement = document.querySelector("#wind-speed");
-  let windSpeed = `${response.data.wind.speed}km/h`;
+  let windSpeed = `${convertMPStoMPH(response.data.wind.speed)} mph`;
 
   let timeElement = document.querySelector("#time");
 
@@ -47,7 +53,7 @@ function formatDate(date) {
   if (minutes < 10) {
     minutes = `0${minutes}`;
   }
-  return `${day}, ${hours}:${minutes}`;
+  return `${day}: ${hours}:${minutes}`;
 }
 function searchCity(city) {
   let apiKey = "48d9c02baa93fa8d733783cd33ot621f";
@@ -69,24 +75,38 @@ function getForecast(city) {
   axios.get(apiUrl).then(displayForecast);
 }
 
-function displayForecast(response) {
-  console.log(response.data);
+function getDate(time) {
+  let date = new Date(time * 1000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
+  return days[date.getDay()];
+}
+
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
-  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
   let forecastHtml = "";
-  days.forEach(function (day) {
-    forecastHtml =
-      forecastHtml +
-      `<div class="weather-forecast-day">
-            <div class="weather-forecast-date">${day}</div>
-            <div class="weather-forecast-icon">🌤️</div>
+
+  response.data.daily.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHtml =
+        forecastHtml +
+        `<div class="weather-forecast-day">
+            <div class="weather-forecast-date">${getDate(day.time)}</div>
+            <div >
+            <img src="${
+              day.condition.icon_url
+            }"class="weather-forecast-icon"/></div>
             <div class="weather-temperatures">
-              <span class="weather-forecast-temperature-max">18°</span>
-              <span class="weather-forecast-temperature-min">12°</span>
+              <span class="weather-forecast-temperature-max">${Math.round(
+                day.temperature.maximum
+              )}°</span>
+              <span class="weather-forecast-temperature-min">${Math.round(
+                day.temperature.minimum
+              )}°</span>
             </div>
           </div>`;
+    }
   });
   forecastElement.innerHTML = forecastHtml;
 }
