@@ -54,7 +54,7 @@ header {
   justify-content: space-between;
 }
 .city-container {
-  padding: 45px 40px 30px 30px;
+  padding: 30px 40px 20px 30px;
 }
 .city {
   margin: 0;
@@ -69,12 +69,12 @@ header {
   color: rgba(17, 15, 30, 0.4);
 }
 .weather-measurements {
-  color: rgba(65, 74, 97, 0.687);
+  color: rgba(65, 74, 97, 0.55);
   font-weight: bolder;
 }
 .weather-temperature-container {
   display: flex;
-  padding: 60px 30px 30px 50px;
+  padding: 50px 35px 20px 50px;
 }
 
 .weather-icon {
@@ -101,7 +101,7 @@ header {
 .weather-forecast-date {
   font-size: 18px;
   font-weight: 500;
-  color: rgb(55, 55, 60);
+  color: rgb(55, 55, 60, 0.9);
   margin: 10px;
 }
 
@@ -110,7 +110,8 @@ header {
   margin-bottom: 10px;
 }
 .weather-temperatures {
-  font-size: 14px;
+  font-size: 15px;
+  color: rgb(55, 55, 60);
 }
 .weather-forecast-temperature-min {
   opacity: 0.6;

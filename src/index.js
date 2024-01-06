@@ -1,6 +1,6 @@
 function convertMPStoMPH(mps) {
   let mph = (mps /= 0.44704);
-  let roundedMph = Math.round(mps);
+  let roundedMph = Math.round(mph);
   return roundedMph;
 }
 
